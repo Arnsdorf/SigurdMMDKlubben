@@ -4,11 +4,17 @@
 
 body {
 	margin: 0;
+	font-family: "raleway", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 	padding: 0;
+	font-weight: bold;
+}
+
+h2{
+	font-size: 2.2rem;
 }
 
 ul, ol {
@@ -24,6 +30,7 @@ li {
 p {
 	margin: 0;
 	padding: 0;
+	font-size: 1.2rem;
 }
 
 img {
@@ -31,8 +38,40 @@ img {
 	max-width: 100%;
 	height: auto;
 }
+
+/* Dette stykke bliver brugt til border-radius på iframes */
 iframe {
 	border-radius: 20px;
 }
 
+/* Dette stykke bliver brugt til de diagonale sektioner */
+.diagonal{
+	--skew-angle: -5deg;
+	--background-color: #4f5468;
+
+	position: relative;
+	isolation: isolate;
+}
+
+.diagonal::after{
+	content: '';
+	background-color: #4f5468;
+	position: absolute;
+	inset: 0;
+	transform: skewY(var(--skew-angle));
+	z-index: -1;
+}
+
+
+/* Dette stykke bliver brugt til knapper */
+.btn-arrow {
+	font-weight: bold;
+	background: linear-gradient(to right, #144CAB, #5E95F6);
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 100px;
+	display: inline-block;
+	font-size: 16px;
+}
 
